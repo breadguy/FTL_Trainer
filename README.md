@@ -8,3 +8,6 @@ I made this trainer because FTL was free on the Discord store for nitro members 
 * Infinite Missiles
 * Infinite Drone Parts
 * Infinite Hull
+
+## Bugs:
+* Wrong Drone Parts Address/Offsets
