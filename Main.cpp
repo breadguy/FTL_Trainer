@@ -30,19 +30,13 @@ bool bHull;
 void WriteToMemory(HANDLE hProcHandle);
 
 //Memory Addresses
-DWORD aScrap = { 0x015C448C };
+
+DWORD aBase = { 0x011D448C };
+
 DWORD aScrapOffset[] = { 0x4D4 };
-
-DWORD aFuel = { 0x015C448C };
 DWORD aFuelOffset[] = { 0x494 };
-
-DWORD aMissiles = { 0x015C448C };
 DWORD aMissilesOffset[] = { 0x48, 0x1E8 };
-
-DWORD aDrones = { 0x015C448C };
-DWORD aDronesOffset[] = { 0x800 };
-
-DWORD aHull = { 0x015C448C };
+DWORD aDronesOffset[] = { 0x4C, 0x1CC };
 DWORD aHullOffset[] = { 0xCC };
 
 int main()
@@ -213,35 +207,35 @@ void WriteToMemory(HANDLE hProcHandle)
 	if (bScrap)
 	{
 		int scrapval = 999;
-		DWORD wScrapAddress = FindDmaAddy(1, hProcHandle, aScrapOffset, aScrap);
+		DWORD wScrapAddress = FindDmaAddy(1, hProcHandle, aScrapOffset, aBase);
 		WriteProcessMemory(hProcHandle, (BYTE*)wScrapAddress, &scrapval, sizeof(scrapval), NULL);
 	}
 
 	if (bFuel)
 	{
 		int fuelval = 999;
-		DWORD wFuelAddress = FindDmaAddy(1, hProcHandle, aFuelOffset, aFuel);
+		DWORD wFuelAddress = FindDmaAddy(1, hProcHandle, aFuelOffset, aBase);
 		WriteProcessMemory(hProcHandle, (BYTE*)wFuelAddress, &fuelval, sizeof(fuelval), NULL);
 	}
 
 	if (bMissiles)
 	{
 		int missilevalue = 999;
-		DWORD wMissileAddress = FindDmaAddy(2, hProcHandle, aMissilesOffset, aMissiles);
+		DWORD wMissileAddress = FindDmaAddy(2, hProcHandle, aMissilesOffset, aBase);
 		WriteProcessMemory(hProcHandle, (BYTE*)wMissileAddress, &missilevalue, sizeof(missilevalue), NULL);
 	}
 
 	if (bDrones)
 	{
 		int dronesvalue = 999;
-		DWORD wDroneAddress = FindDmaAddy(1, hProcHandle, aDronesOffset, aDrones);
+		DWORD wDroneAddress = FindDmaAddy(2, hProcHandle, aDronesOffset, aBase);
 		WriteProcessMemory(hProcHandle, (BYTE*)wDroneAddress, &dronesvalue, sizeof(dronesvalue), NULL);
 	}
 
 	if (bHull)
 	{
 		int hullvalue = 999;
-		DWORD wHullAddress = FindDmaAddy(1, hProcHandle, aHullOffset, aHull);
+		DWORD wHullAddress = FindDmaAddy(1, hProcHandle, aHullOffset, aBase);
 		WriteProcessMemory(hProcHandle, (BYTE*)wHullAddress, &hullvalue, sizeof(hullvalue), NULL);
 	}
 }

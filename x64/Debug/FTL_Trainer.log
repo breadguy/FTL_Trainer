@@ -1,0 +1,9 @@
+﻿  Main.cpp
+c:\dev\ftl_trainer\main.cpp(194): warning C4312: 'type cast': conversion from 'DWORD' to 'LPCVOID' of greater size
+c:\dev\ftl_trainer\main.cpp(200): warning C4312: 'type cast': conversion from 'DWORD' to 'LPCVOID' of greater size
+c:\dev\ftl_trainer\main.cpp(211): warning C4312: 'type cast': conversion from 'DWORD' to 'BYTE *' of greater size
+c:\dev\ftl_trainer\main.cpp(218): warning C4312: 'type cast': conversion from 'DWORD' to 'BYTE *' of greater size
+c:\dev\ftl_trainer\main.cpp(225): warning C4312: 'type cast': conversion from 'DWORD' to 'BYTE *' of greater size
+c:\dev\ftl_trainer\main.cpp(232): warning C4312: 'type cast': conversion from 'DWORD' to 'BYTE *' of greater size
+c:\dev\ftl_trainer\main.cpp(239): warning C4312: 'type cast': conversion from 'DWORD' to 'BYTE *' of greater size
+  FTL_Trainer.vcxproj -> C:\dev\FTL_Trainer\x64\Debug\FTL_Trainer.exe
